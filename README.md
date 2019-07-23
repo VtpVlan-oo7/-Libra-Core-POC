@@ -112,3 +112,23 @@ libra% transferb 0 1 50
 Finished transaction!
 To query for transaction status, run: query txn_acc_seq 0 1 <fetch_events=true|false>
 
+
+
+################===================Run a Local Validator Node=====================##############
+
+To start a validator node locally on your computer and create your own local blockchain network (not connected to the Libra testnet), ensure that you have run the build script as described in Setup Libra Core, change to the root directory of the Libra Core repository, and run libra_swarm as shown below-
+
+$ cd ~/libra
+
+$ cargo run -p libra_swarm -- -s
+
+
+*p libra_swarm - causes cargo to run the libra_swarm package, which starts a local blockchain consisting of one node.
+-s option starts a local client to connect to the local blockchain.
+
+*To see additional options for starting a node and connecting to the Libra Blockchain, run:
+
+$ cargo run -p libra_swarm -- -h
+
+*The cargo run command may take some time to run. If the execution of this command completes without errors, an instance of the Libra CLI client and a Libra validator node is running on your system. Upon successful execution, you should see an output containing the CLI client menu and the libra% prompt.
+
